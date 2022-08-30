@@ -17,9 +17,24 @@ class BoatsController < ApplicationController
     redirect_to_boat_path(boat)
   end
 
+  def edit
+    # on link do if @boat.user == current user show the link
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    if @boat.update(boat_params)
+      redirect_to boat_path(@boat)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+
+  end
+
   private
 
   def boat_params
-    params.require(:restaurant).permit(:name, :category, :available, :capacity, :location, :price, :rating)
+    params.require(:boat).permit(:name, :category, :available, :capacity, :location, :price, :rating)
   end
 end
