@@ -2,26 +2,26 @@
       <section>
         <div class="container">
           <div class="row">
-          <% @boats.each do |b| %>
+          <% @boats.each do |boat| %>
             <div class="col-md-4">
+            <%= link_to boat_path(boat) do %>
               <div class="card card-01">
                 <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
                   <div class="card-body">
                     <span class="badge-box"><i class="fa fa-check"></i></span>
-                    <h4 class="card-title">Name: <%= b.name %></h4>
-                    <p class="card-text">Category: <%= b.category %></p>
-                    <p class="card-text">Location: <%= b.location %></p>
+                    <h4 class="card-title">Name: <%= boat.name %></h4>
+                    <p class="card-text">Category: <%= boat.category %></p>
+                    <p class="card-text">Location: <%= boat.location %></p>
                     <p class="card-text">
                     Rating:
-                    <%  b.rating.times do  %>
+                    <%  boat.rating.times do  %>
                       <i class="bi bi-star-fill"></i>
                     <% end %>
                     </p>
-                    <a href="#" class="btn btn-default text-uppercase">Explore</a>
                   </div>
               </div>
+            <% end %>
             </div>
-            <%=  %>
           <% end %>
           </div>
           </div>

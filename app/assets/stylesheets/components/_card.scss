@@ -10,11 +10,17 @@ section{
 
 .card{
   box-shadow:2px 2px 20px rgba(0,0,0,0.3); border:none; margin-bottom:30px;
+  text-decoration: none;
 }
 .card:hover{
   transform: scale(1.05);
   transition: all 1s ease;
   z-index: 999;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .card-01 .card-body{
