@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Your booking</h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Start Date</th>
+            <td><%= @booking.start_date %></td>
+          </tr>
+          <tr>
+            <th scope="row">End Date</th>
+            <td><%= @booking.end_date %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to "See all of your bookings", mybookings_path %>
+    </div>
+  </div>
+</div>

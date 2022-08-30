@@ -32,10 +32,14 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-    redirect_to mybookings_path, notice: "Your booking has been updated!"
+      redirect_to mybookings_path, notice: "Your booking has been updated!"
     else
       render :edit, status: :unprocessible_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def destroy
