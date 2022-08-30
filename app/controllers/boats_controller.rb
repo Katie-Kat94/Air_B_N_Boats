@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    @boats = Boat.where(user: current_user)
   end
 
   def show
@@ -13,8 +13,9 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     @boat.save
-    redirect_to_boat_path(boat)
+    redirect_to boat_path(@boat)
   end
 
   def edit
