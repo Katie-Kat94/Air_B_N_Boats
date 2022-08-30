@@ -43,132 +43,27 @@
       <section>
         <div class="container">
           <div class="row">
+          <% @boats.each do |b| %>
             <div class="col-md-4">
               <div class="card card-01">
                 <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
                   <div class="card-body">
                     <span class="badge-box"><i class="fa fa-check"></i></span>
-                    <h4 class="card-title">Luxury Boat</h4>
-                    <p class="card-text">Boat.name</p>
-                    <p class="card-text">Boat.location</p>
-                    <p class="card-text">Boat.category</p>
-                    <p class="card-text">Boat.rating</p>
+                    <h4 class="card-title">Name: <%= b.name %></h4>
+                    <p class="card-text">Category: <%= b.category %></p>
+                    <p class="card-text">Location: <%= b.location %></p>
+                    <p class="card-text">
+                    Rating:
+                    <%  b.rating.times do  %>
+                      <i class="bi bi-star-fill"></i>
+                    <% end %>
+                    </p>
                     <a href="#" class="btn btn-default text-uppercase">Explore</a>
                   </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card card-01">
-                <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                  <div class="card-body">
-                    <span class="badge-box"><i class="fa fa-check"></i></span>
-                    <h4 class="card-title">Luxury Boat</h4>
-                    <p class="card-text">Boat.name</p>
-                    <p class="card-text">Boat.location</p>
-                    <p class="card-text">Boat.category</p>
-                    <p class="card-text">Boat.rating</p>
-                    <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                  </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-01">
-               <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                  <div class="card-body">
-                    <span class="badge-box"><i class="fa fa-check"></i></span>
-                    <h4 class="card-title">Luxury Boat</h4>
-                    <p class="card-text">Boat.name</p>
-                    <p class="card-text">Boat.location</p>
-                    <p class="card-text">Boat.category</p>
-                    <p class="card-text">Boat.rating</p>
-                    <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                  </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card card-01">
-              <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-                <div class="card-body">
-                  <span class="badge-box"><i class="fa fa-check"></i></span>
-                  <h4 class="card-title">Luxury Boat</h4>
-                  <p class="card-text">Boat.name</p>
-                  <p class="card-text">Boat.location</p>
-                  <p class="card-text">Boat.category</p>
-                  <p class="card-text">Boat.rating</p>
-                  <a href="#" class="btn btn-default text-uppercase">Explore</a>
-                </div>
-              </div>
-            </div>
+            <%=  %>
+          <% end %>
           </div>
           </div>
         </div>
