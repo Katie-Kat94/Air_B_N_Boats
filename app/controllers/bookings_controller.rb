@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_boat, only: [:new, :create]
+  before_action :set_boat, only: [:new, :create, :edit, :update]
 
   def index
     @bookings = Booking.all
@@ -23,6 +23,25 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = Booking.where(user: current_user)
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+    redirect_to mybookings_path, notice: "Your booking has been updated!"
+    else
+      render :edit, status: :unprocessible_entity
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to booking_path(@booking.boat), status: :see_other
   end
 
   private
