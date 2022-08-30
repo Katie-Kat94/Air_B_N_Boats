@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_boat, only: [:new, :create]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new
@@ -15,6 +19,10 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
   end
 
   private

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>All Bookings on this Boat</h1>
+      <ul class="list-group mb-3">
+        <% @bookings.each do |booking| %>
+          <li class="list-group-item">
+            <%= link_to booking.start_date, booking_path(booking) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "See all boats", boats_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
