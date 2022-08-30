@@ -1,0 +1,18 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new boat listing!</h3>
+        <%= simple_form_for @boat do |f| %>
+          <%= f.input :name, required: true, placeholder: 'Queen Elizabeth' %>
+          <%= f.input :category, required: true, placeholder: 'Super Yacht' %>
+          <%= f.input :available, required: true, placeholder: 'Now' %>
+          <%= f.input :capacity, required: true, placeholder: 'XX tonnes' %>
+          <%= f.input :location, required: true, placeholder: 'Bournemouth' %>
+          <%= f.input :price, required: true, placeholder: '' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

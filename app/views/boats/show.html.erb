@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1><%= @boat.name %></h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Category</th>
+            <td><%= @boat.category %></td>
+          </tr>
+          <tr>
+            <th scope="row">Availability</th>
+            <td><%= @boat.available %></td>
+          </tr>
+          <tr>
+            <th scope="row">Capacity</th>
+            <td><%= @boat.capacity %></td>
+          </tr>
+          <tr>
+            <th scope="row">Location</th>
+            <td><%= @boat.location %></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td><%= @boat.price %></td>
+          </tr>
+          <tr>
+            <th scope="row">Rating</th>
+            <td><%= @boat.rating %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to "See all boats", boats_path %>
+    </div>
+  </div>
+</div>
