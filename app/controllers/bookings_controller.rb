@@ -43,9 +43,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    # raise
     @booking = Booking.find(params[:id])
+    @boat = @booking.boat
     @booking.destroy
-    redirect_to booking_path(@booking.boat), status: :see_other
+    redirect_to boat_path(@boat), status: :see_other
   end
 
   private

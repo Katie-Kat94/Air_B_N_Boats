@@ -15,6 +15,12 @@
         </tbody>
       </table>
       <%= link_to "See all of your bookings", mybookings_path %>
+      <li class="list-group-item">
+  <%= button_to "Delete",
+    booking_path(@booking),
+    method: "delete"
+  %>
+</li>
     </div>
   </div>
 </div>
