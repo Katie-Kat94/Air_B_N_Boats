@@ -1,7 +1,33 @@
-<h2><%= @boat.name %></h2>
-<p><%= @boat.category %></p>
-<p><%= @boat.available %></p>
-<p><%= @boat.capacity %></p>
-<p><%= @boat.location %></p>
-<p><%= @boat.price %></p>
-<p><%= @boat.rating %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1><%= @boat.name %></h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Category</th>
+            <td><%= @boat.category %></td>
+          </tr>
+          <tr>
+            <th scope="row">Availability</th>
+            <td><%= 'Available from' @boat.available %></td>
+          </tr>
+          <tr>
+            <th scope="row">Capacity</th>
+            <td><%= @boat.capacity %></td>
+          </tr>
+          <tr>
+            <th scope="row">Location</th>
+            <td><%= @boat.location %></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td><%= @boat.price %></td>
+          </tr>
+          <tr>
+            <th scope="row">Rating</th>
+            <td><%= @boat.rating %></td>
+          </tr>
+        </tbody>
+      </table>
