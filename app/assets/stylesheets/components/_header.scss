@@ -1,0 +1,21 @@
+.container-fluid {
+  height: 185px;
+  background-image: url('home-header.jpg');
+  background-size: cover;
+  // background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;;
+}
+
+.title {
+  text-align: center;
+}
+
+.logo {
+  width: 90px
+
+}
+.nav-link {
+  color: white;
+}
