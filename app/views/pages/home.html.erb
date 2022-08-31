@@ -1,12 +1,15 @@
-
-      <section>
+       <section>
         <div class="container">
           <div class="row">
           <% @boats.each do |boat| %>
             <div class="col-md-4">
             <%= link_to boat_path(boat) do %>
               <div class="card card-01">
+              <% if boat.photo.attached? %>
+                <%=cl_image_tag boat.photo.key %>
+              <% else %>
                 <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+              <% end %>
                   <div class="card-body">
                     <span class="badge-box"><i class="fa fa-check"></i></span>
                     <h4 class="card-title">Name: <%= boat.name %></h4>
