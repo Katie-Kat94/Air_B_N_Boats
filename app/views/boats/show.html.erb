@@ -33,7 +33,11 @@
       <%= link_to "See all boats", boats_path %>
       <% if @boat.user == current_user %>
       <%= link_to  "Edit", edit_boat_path(@boat) %>
+      <% else %>
+      <p>
+      <%= link_to "Go ahead and book your boat!", new_boat_booking_path(@boat) %>
       <% end %>
+      </p>
     </div>
   </div>
 </div>
