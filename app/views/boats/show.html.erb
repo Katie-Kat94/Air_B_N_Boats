@@ -1,36 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1><%= @boat.name %></h1>
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">Category</th>
-            <td><%= @boat.category %></td>
-          </tr>
-          <tr>
-            <th scope="row">Availability</th>
-            <td><%= @boat.available %></td>
-          </tr>
-          <tr>
-            <th scope="row">Capacity</th>
-            <td><%= @boat.capacity %></td>
-          </tr>
-          <tr>
-            <th scope="row">Location</th>
-            <td><%= @boat.location %></td>
-          </tr>
-          <tr>
-            <th scope="row">Price</th>
-            <td><%= @boat.price %></td>
-          </tr>
-          <tr>
-            <th scope="row">Rating</th>
-            <td><%= @boat.rating %></td>
-          </tr>
-        </tbody>
-      </table>
-      <%= link_to "See all boats", boats_path %>
+
+
+<div class="container_2">
+<div class="card-trip">
+  <img src="luxury-yacht-charter-mallorca.jpg"/>
+  <div class="card-trip-main-infos">
+    <div class="card-trip-infos">
+      <h2><%= @boat.name  %></h2>
+      <h2> <i> <%= @boat.category %> </i></h2>
+      <p> Available: <%= @boat.available %></p>
+      <p> Capacity: <%= @boat.capacity %></p>
+      <p> Location: <%= @boat.location %></p>
+      <p> Rating: <%= @boat.rating %></p>
+    </div>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <div>
+      <h2 class="card-trip-pricing">£<%= @boat.price %> per week</h2>
+      <%= link_to "Book now", boat_path + '/bookings/new', class: "btn btn-ghost" %>
+      <%= link_to "Back to all boats", root_path, class: "btn btn-ghost" %>
       <% if @boat.user == current_user %>
       <%= link_to  "Edit", edit_boat_path(@boat) %>
       <% end %>
@@ -39,4 +25,6 @@
       <% end%>
     </div>
   </div>
+</div>
+</div>
 </div>
