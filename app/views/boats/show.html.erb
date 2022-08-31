@@ -15,8 +15,8 @@
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     <div>
       <h2 class="card-trip-pricing">£<%= @boat.price %> per week</h2>
-      <%= link_to "Book now", "#", class: "btn btn-ghost" %>
-      <%= link_to "Back to all boats", boats_path, class: "btn btn-ghost" %>
+      <%= link_to "Book now", boat_path + '/bookings/new', class: "btn btn-ghost" %>
+      <%= link_to "Back to all boats", root_path, class: "btn btn-ghost" %>
       <% if @boat.user == current_user %>
       <%= link_to  "Edit", edit_boat_path(@boat) %>
       <% end %>
