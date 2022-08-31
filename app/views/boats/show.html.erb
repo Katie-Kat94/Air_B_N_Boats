@@ -19,7 +19,11 @@
       <%= link_to "Back to all boats", root_path, class: "btn btn-ghost" %>
       <% if @boat.user == current_user %>
       <%= link_to  "Edit", edit_boat_path(@boat) %>
+      <% else %>
+      <p>
+      <%= link_to "Go ahead and book your boat!", new_boat_booking_path(@boat) %>
       <% end %>
+      </p>
       <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
       <i class="fa-solid fa-trash-can"></i>,
       <% end%>
