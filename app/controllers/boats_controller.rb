@@ -30,7 +30,12 @@ class BoatsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
 
+  def destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
+    redirect_to boats_path, status: :see_other
   end
 
   private
