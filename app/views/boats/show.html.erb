@@ -34,6 +34,9 @@
       <% if @boat.user == current_user %>
       <%= link_to  "Edit", edit_boat_path(@boat) %>
       <% end %>
+      <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash-can"></i>,
+      <% end%>
     </div>
   </div>
 </div>
