@@ -4,17 +4,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h2>My Boats</h2>
-      <ul class="list-group mb-3">
+      <div>
         <% @boats.each do |boat| %>
-          <li class="list-group-item">
             <%= link_to boat.name, boat_path(boat) %>
-          </li>
+              <%= link_to boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i class="fa-solid fa-trash-can"></i>
+                <% end %>
+          </div>
         <% end %>
       </ul>
       <%= link_to "Add a new Boat Listing", new_boat_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
-
-<h2> My Scheduled Trips </h2>
-<div class="booking_card">
