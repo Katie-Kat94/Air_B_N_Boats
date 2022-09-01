@@ -53,17 +53,16 @@ a {
 
 .card-trip {
   align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 800px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 570px;
+  height: 521px;
 }
 
 .card-trip > img {
-  height: 200px;
   width: 100%;
+  height: auto;
   object-fit: cover;
 }
 

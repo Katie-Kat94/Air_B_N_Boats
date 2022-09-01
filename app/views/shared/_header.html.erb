@@ -1,8 +1,20 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-      <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "logo.jpg", class: "logo" %>
-    <% end %>
+    <div class="wrapper">
+      <div class="first">
+        <%= image_tag "logo.jpg", class: "logo" %>
+      </div>
+      <div class="second">
+        <%= form_with url: root_path , method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find your boat"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
     <div class="title">
     <h1>Air B n Boats</h1>
     <p>fishing trips, river tours, luxury boating experience</p>
@@ -25,7 +37,11 @@
            <li class="nav-item"> <%= link_to "Sign In", new_user_session_path, class: "nav-link"  %> </li>
           <% else %>
            <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <% if current_user.photo.attached? %>
+           <%=cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <% else %>
+            <%= image_tag "defult profile.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", boats_path, class: "dropdown-item" %>
               <%= link_to "Bookings", mybookings_path, class: "dropdown-item" %>
