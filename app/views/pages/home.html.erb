@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1> <%= current_user.name %> </h1>
 <p> <%= link_to "Edit you profile", edit_user_registration_path(current_user) %> </p>
 
@@ -38,6 +39,26 @@
                   </div>
                   <% end %>
                 </div>
+=======
+  <%= form_with url: root_path , method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your boat"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+       <section>
+        <div class="container">
+          <div class="row">
+          <% @boats.each do |boat| %>
+            <div class="col-md-4">
+            <%= link_to boat_path(boat) do %>
+              <div class="card card-01">
+              <% if boat.photo.attached? %>
+                <%=cl_image_tag boat.photo.key %>
+>>>>>>> a72b4bf244f55f7af9b14fa9e7c0ca530046173f
               <% else %>
               <h2> You currently don't have any boats registered with us:</h2>
               <% end %>

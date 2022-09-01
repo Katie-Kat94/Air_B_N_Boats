@@ -27,7 +27,7 @@ User.destroy_all
 # )
 
 10.times do
-  u = User.create(email: Faker::Internet.email, password: "123456")
+  u = User.create(email: Faker::Internet.email, password: "123456", name: "jim", rating: 5)
   2.times do
     boat = Boat.create!(
     user: u,
