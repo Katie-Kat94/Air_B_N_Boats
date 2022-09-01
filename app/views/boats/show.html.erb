@@ -5,7 +5,7 @@
 <% if @boat.photo.attached? %>
   <%= cl_image_tag @boat.photo.key %>
 <% else %>
-  <%= image_tag "luxury-yacht-charter-mallorca.jpg" %>
+  <%= image_tag "#{@boat.category.parameterize}.jpg" %>
  <% end %>
   <div class="card-trip-main-infos">
     <div class="card-trip-infos">

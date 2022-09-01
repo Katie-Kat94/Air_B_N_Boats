@@ -7,7 +7,7 @@
               <% if @booking.boat.photo.attached? %>
                 <%=cl_image_tag booking.boat.photo.key %>
               <% else %>
-                <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+                <%= image_tag "#{@booking.boat.category.parameterize}.jpg", class: "card-img-top" %>
               <% end %>
                   <table class="table">
                     <tbody>
