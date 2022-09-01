@@ -1,5 +1,11 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .container-fluid {
-  height: 185px;
+  height: 100px;
   background-image: url('home-header.jpg');
   background-size: cover;
   background-position: center;
