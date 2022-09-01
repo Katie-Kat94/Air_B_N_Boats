@@ -16,7 +16,9 @@ section{
 .card:hover{
   transform: scale(1.05);
   transition: all 1s ease;
-  z-index: 999;
+  z-index: 9;
+  text-decoration: none;
+  color: black;
 }
 
 .card-01 img {
