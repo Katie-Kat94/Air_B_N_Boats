@@ -32,7 +32,7 @@ User.destroy_all
     boat = Boat.create!(
     user: u,
     name: Faker::Ancient.god,
-    category: ["Luxury", "Fishing", "Sailing", "Superyacht"].sample,
+    category: ["Luxury", "Fishing", "Sailing", "Superyacht", "River Boat", "Speedboat", "Houseboat", "Banana Boat"].sample,
     available: true,
     capacity: rand(5..200),
     location: Faker::Address.street_address,
