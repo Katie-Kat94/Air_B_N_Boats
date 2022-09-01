@@ -19,7 +19,6 @@ class BoatsController < ApplicationController
   end
 
   def edit
-    # on link do if @boat.user == current user show the link
     @boat = Boat.find(params[:id])
   end
 
