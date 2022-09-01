@@ -1,21 +1,22 @@
-
-<h1> User Profile </h1>
+<h1> <%= current_user.name %> </h1>
+<p> <%= link_to "Edit you profile", edit_user_registration_path(current_user) %> </p>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h2>My Boats</h2>
+    <% if @boats.any? %>
+      <h2>Your Boats:</h2>
       <div>
-        <% @boats.each do |boat| %>
-            <%= link_to boat.name, boat_path(boat) %>
-              <%= link_to boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <i class="fa-solid fa-trash-can"></i>
-                <% end %>
-          </div>
-        <% end %>
-      </ul>
+          <% @boats.each do |boat| %>
+              <%= link_to boat.name, boat_path(boat) %>
+                <%= link_to boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+            </div>
+          <% end %>
+    <% else %>
+    <h2> You currently don't have any boats registered with us:</h2>
+    <% end %>
       <%= link_to "Add a new Boat Listing", new_boat_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
-<%= link_to "Edit you profile", edit_user_registration_path(current_user) %>
-
