@@ -1,22 +1,55 @@
 <h1> <%= current_user.name %> </h1>
-<p> <%= link_to "Edit you profile", edit_user_registration_path(current_user) %> </p>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-    <% if @boats.any? %>
-      <h2>Your Boats:</h2>
-      <div>
-          <% @boats.each do |boat| %>
-              <%= link_to boat.name, boat_path(boat) %>
-                <%= link_to boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fa-solid fa-trash-can"></i>
-                  <% end %>
-            </div>
-          <% end %>
-    <% else %>
-    <h2> You currently don't have any boats registered with us:</h2>
-    <% end %>
-      <%= link_to "Add a new Boat Listing", new_boat_path, class: 'btn btn-primary' %>
+<p> <%= link_to "Edit your profile", edit_user_registration_path(current_user) %> </p>
+
+      <div class="container">
+          <% if @boats.any? %>
+        <h2>Your Boats:</h2>
+          <div>
+            <ul class="list-group mb-3">
+
+                <div class="row">
+                  <% @boats.each do |boat| %>
+                  <div class="col-md-4">
+                    <%= link_to boat_path(boat) do%>
+                      <div class="card card-01">
+                        <% if boat.photo.attached? %>
+                        <%=cl_image_tag boat.photo.key %>
+                        <% else %>
+                        <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+                        <% end %>
+                        <div class="card-body">
+                          <span class="badge-box"><i class="fa fa-check"></i></span>
+                          <h4 class="card-title">Name: <%= boat.name %></h4>
+                          <p class="card-text">Category: <%= boat.category %></p>
+                          <p class="card-text">Location: <%= boat.location %></p>
+                          <p class="card-text">
+                          Rating:
+                          <%  boat.rating do  %>
+                            <i class="bi bi-star-fill"></i>
+                          <% end %>
+                          </p>
+                          <div align="right">
+                          <%= link_to boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                              <i class="fa-solid fa-trash-can" ></i>
+                                <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% else %>
+              <h2> You currently don't have any boats registered with us:</h2>
+              <% end %>
+        </ul>
+        <%= link_to "Add a new Boat Listing", new_boat_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+  <div class="container">
+    <h2> My Scheduled Trips </h2>
+      <div class="booking_card">
     </div>
   </div>
-</div>
