@@ -19,7 +19,7 @@
                     <p class="card-text">Category: <%= booking.boat.category %></p>
                     <p class="card-text">Location: <%= booking.boat.location %></p>
                     <p class="card-text">Rating:
-                      <%  booking.boat.rating do  %>
+                      <%  booking.boat.rating.times do  %>
                         <i class="bi bi-star-fill"></i>
                       <% end %>
                     </p>
