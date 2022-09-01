@@ -1,6 +1,8 @@
 <div class="container">
   <% if @bookings.any? %>
+    <br>
     <h2>Your bookings:</h2>
+    <br>
     <div>
       <ul class="list-group mb-3" >
         <div class="row" >
@@ -31,7 +33,7 @@
       </ul>
     </div>
   <% else %>
-    <h2> You currently don't have any bookings!</h2>
+    <h2> You don't have any current bookings!</h2>
   <% end %>
   <div align="center">
     <%= link_to "Search all available boats", root_path, class: 'btn btn-primary' %>

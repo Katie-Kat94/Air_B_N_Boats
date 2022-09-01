@@ -1,36 +1,49 @@
-<div class="container">
-  <div class="row">
+<div class="container" align="center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Your booking</h1>
-      <div class="card disabled">
-        <% if @booking.boat.photo.attached? %>
-          <%=cl_image_tag booking.boat.photo.key %>
-        <% else %>
-          <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
-        <% end %>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row">Start Date</th>
-            <td><%= @booking.start_date %></td>
-          </tr>
-          <tr>
-            <th scope="row">End Date</th>
-            <td><%= @booking.end_date %></td>
-          </tr>
-        </tbody>
-      </table>
+      <br>
+        <h1>Your booking</h1>
+          <br>
+            <div class="card disabled" >
+              <% if @booking.boat.photo.attached? %>
+                <%=cl_image_tag booking.boat.photo.key %>
+              <% else %>
+                <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+              <% end %>
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Start Date</th>
+                        <td><%= @booking.start_date %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">End Date</th>
+                        <td><%= @booking.end_date %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Location</th>
+                        <td><%= @booking.boat.location %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
       </div>
-      <li class="list-group-item">
-  <%= button_to "Delete booking",
-    booking_path(@booking),
-    method: "delete"
-  %>
-  <%= link_to "Edit your booking", edit_boat_booking_path(@booking.boat, @booking) %>
-</li>
-    </div>
-    <div> <%= link_to "See all of your bookings", mybookings_path %> </div>
-  </div>
+            <div align="center">
+              <li class="list-group-item">
+                <%= button_to "Edit your booking",
+                        edit_boat_booking_path(@booking.boat, @booking),
+                        method: "get"
+                        %>
+                  <br>
+                <%= button_to "Delete booking",
+                        booking_path(@booking),
+                        method: "delete"
+                      %>
+                  <br>
+                <%= button_to "See all of your bookings",
+                        mybookings_path,
+                        method: "get" %>
+                </li>
+            </div>
 </div>
 
 <%# edit_boat_booking_path([@boat @booking]) %>
