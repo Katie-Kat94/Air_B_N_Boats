@@ -9,7 +9,7 @@
               <% if boat.photo.attached? %>
                 <%=cl_image_tag boat.photo.key %>
               <% else %>
-                <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+                <%= image_tag "#{boat.category.parameterize}.jpg", class: "card-img-top" %>
               <% end %>
                   <div class="card-body">
                     <span class="badge-box"><i class="fa fa-check"></i></span>
