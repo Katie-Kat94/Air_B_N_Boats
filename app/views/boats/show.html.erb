@@ -2,7 +2,11 @@
 
 <div class="container_2">
 <div class="card-trip">
-  <img src="luxury-yacht-charter-mallorca.jpg"/>
+<% if @boat.photo.attached? %>
+  <%= cl_image_tag @boat.photo.key %>
+<% else %>
+  <%= image_tag "luxury-yacht-charter-mallorca.jpg" %>
+ <% end %>
   <div class="card-trip-main-infos">
     <div class="card-trip-infos">
       <h2><%= @boat.name  %></h2>
@@ -12,7 +16,11 @@
       <p> Location: <%= @boat.location %></p>
       <p> Rating: <%= @boat.rating %></p>
     </div>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <% if @boat.user.photo.attached? %>
+      <%= cl_image_tag @boat.user.photo.key, class: "card-trip-user avatar-bordered" %>
+    <% else %>
+      <%= image_tag "defult profile.jpeg", class: "card-trip-user avatar-bordered" %>
+    <% end %>
     <div>
       <h2 class="card-trip-pricing">£<%= @boat.price %> per week</h2>
       <% if @boat.user == current_user %>
