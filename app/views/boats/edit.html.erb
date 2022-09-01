@@ -5,5 +5,7 @@
   <%= f.input :capacity %>
   <%= f.input :location %>
   <%= f.input :price %>
+  <%= f.input :rating, required: true, placeholder: '' %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

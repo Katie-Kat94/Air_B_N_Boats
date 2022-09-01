@@ -20,7 +20,11 @@
     booking_path(@booking),
     method: "delete"
   %>
+  <%= link_to "Edit your booking", edit_boat_booking_path(@booking.boat, @booking) %>
 </li>
     </div>
   </div>
 </div>
+
+<%# edit_boat_booking_path([@boat @booking]) %>
+<%# boat_path(@boat) + booking_path(@booking) + "/edit" %>

@@ -27,7 +27,7 @@ User.destroy_all
 # )
 
 10.times do
-  u = User.create(email: Faker::Internet.email, password: "123456")
+  u = User.create(email: Faker::Internet.email, password: "123456", name: "jim", rating: 5)
   2.times do
     boat = Boat.create!(
     user: u,
@@ -39,9 +39,18 @@ User.destroy_all
     price: Faker::Number.within(range: 250..5000),
     rating: Faker::Number.within(range: 1..5)
     )
+    booking = Booking.create!(
+    user: u,
+    start_date: Date.parse("2022-04-26"),
+    boat: boat,
+    end_date: Date.parse("2022-06-27"),
+    confirmed: true,
+    )
     puts boat.name
   end
 
 end
+
+
 
 # puts "adding restaurants"

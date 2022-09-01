@@ -30,12 +30,17 @@ class BoatsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
 
+  def destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
+    redirect_to boats_path, status: :see_other
   end
 
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :category, :available, :capacity, :location, :price, :rating)
+    params.require(:boat).permit(:name, :category, :available, :capacity, :location, :price, :rating, :photo)
   end
 end
