@@ -1,8 +1,7 @@
+<div class="container">
 <h1> <%= current_user.name %> </h1>
 <p> <%= link_to "Edit your profile", edit_user_registration_path(current_user) %> </p>
-
-      <div class="container">
-          <% if @boats.any? %>
+      <% if @boats.any? %>
         <h2>Your Boats:</h2>
           <div>
             <ul class="list-group mb-3">
@@ -44,12 +43,8 @@
               <h2> You currently don't have any boats registered with us:</h2>
               <% end %>
         </ul>
+        <div align="center">
         <%= link_to "Add a new Boat Listing", new_boat_path, class: 'btn btn-primary' %>
+        </div>
       </div>
     </div>
-
-  <div class="container">
-    <h2> My Scheduled Trips </h2>
-      <div class="booking_card">
-    </div>
-  </div>

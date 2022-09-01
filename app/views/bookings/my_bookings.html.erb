@@ -1,15 +1,40 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>My bookings</h1>
-      <ul class="list-group mb-3">
-        <% @bookings.each do |booking| %>
-          <li class="list-group-item">
-            <%= link_to booking.start_date, booking_path(booking) %>
-          </li>
-        <% end %>
+  <% if @bookings.any? %>
+    <h2>Your bookings:</h2>
+    <div>
+      <ul class="list-group mb-3" >
+        <div class="row" >
+          <% @bookings.each do |booking| %>
+            <div class="col-md-4">
+              <%= link_to booking_path(booking) do%>
+                <div class="card card-01">
+                  <% if booking.boat.photo.attached? %>
+                    <%=cl_image_tag booking.boat.photo.key %>
+                  <% else %>
+                    <%= image_tag "luxury-yacht-charter-mallorca.jpg", class: "card-img-top" %>
+                  <% end %>
+                  <div class="card-body">
+                    <span class="badge-box"><i class="fa fa-check"></i></span>
+                    <h4 class="card-title">Name: <%= booking.boat.name %></h4>
+                    <p class="card-text">Category: <%= booking.boat.category %></p>
+                    <p class="card-text">Location: <%= booking.boat.location %></p>
+                    <p class="card-text">Rating:
+                      <%  booking.boat.rating do  %>
+                        <i class="bi bi-star-fill"></i>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </ul>
-      <%= link_to "See all boats", boats_path, class: 'btn btn-primary' %>
     </div>
+  <% else %>
+    <h2> You currently don't have any bookings!</h2>
+  <% end %>
+  <div align="center">
+    <%= link_to "Search all available boats", root_path, class: 'btn btn-primary' %>
   </div>
 </div>
