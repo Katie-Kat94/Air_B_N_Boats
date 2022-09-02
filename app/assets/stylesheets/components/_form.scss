@@ -1,0 +1,11 @@
+.bg-white {
+  background-size: cover;
+  color: white;
+}
+
+.log-in a {
+  margin-left: 13px;
+  &:hover {
+    color: white;
+  }
+}
