@@ -19,7 +19,7 @@
     <% if @boat.user.photo.attached? %>
       <%= cl_image_tag @boat.user.photo.key, class: "card-trip-user avatar-bordered" %>
     <% else %>
-      <%= image_tag "defult profile.jpeg", class: "card-trip-user avatar-bordered" %>
+      <%= image_tag "defult profile.jpeg", class: "card-trip-user -bordered" %>
     <% end %>
     <div>
       <h2 class="card-trip-pricing">£<%= @boat.price %> per week</h2>
