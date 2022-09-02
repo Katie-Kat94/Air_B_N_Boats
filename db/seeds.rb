@@ -35,7 +35,7 @@ User.destroy_all
     category: ["Luxury", "Fishing", "Sailing", "Superyacht", "River Boat", "Speedboat", "Houseboat", "Banana Boat"].sample,
     available: true,
     capacity: rand(5..200),
-    location: Faker::Address.street_address,
+    location: ["16 Villa Gaudelet, Paris", "97-99 Kings Rd, Brighton", "200 Santa Monica Pier, Santa Monica",].sample,
     price: Faker::Number.within(range: 250..5000),
     rating: Faker::Number.within(range: 1..5)
     )

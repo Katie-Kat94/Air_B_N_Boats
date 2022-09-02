@@ -7,6 +7,7 @@
 <% else %>
   <%= image_tag "#{@boat.category.parameterize}.jpg" %>
  <% end %>
+
   <div class="card-trip-main-infos">
     <div class="card-trip-infos">
       <h2><%= @boat.name  %></h2>
@@ -32,5 +33,9 @@
     </div>
   </div>
 </div>
-</div>
+  <div style="width: 500px; height: 525px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

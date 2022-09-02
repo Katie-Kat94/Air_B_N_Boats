@@ -7,7 +7,7 @@
           <%= f.input :name, required: true, placeholder: 'Queen Elizabeth' %>
           <%= f.input :category, :collection => ["Luxury", "Fishing", "Sailing", "Superyacht", "River Boat", "Speedboat", "Houseboat", "Banana Boat"], prompt: "Add a category" %>
           <%= f.input :capacity, required: true, placeholder: 'XX tonnes' %>
-          <%= f.input :location, required: true, placeholder: 'Bournemouth' %>
+          <%= f.input :location, required: true, placeholder: 'Bournemouth', label: "Address" %>
           <%= f.input :price, required: true, placeholder: '' %>
           <%= f.input :rating, required: true, placeholder: '' %>
           <%= f.input :photo, as: :file %>
